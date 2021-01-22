@@ -1,12 +1,10 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+
+// import airlines from '@/store/airlines'
+import passengers from '@/store/passengers';
 
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+	modules: {
+		passengers
+	}
+});
