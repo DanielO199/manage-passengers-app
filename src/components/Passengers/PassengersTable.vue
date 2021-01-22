@@ -11,8 +11,13 @@
     :loading="isLoading"
     @page="onPage($event)"
     @sort="onSort($event)"
+    @row-select="onRowSelect"
+    v-model:selection="passenger"
+    selectionMode="single"
   >
-    <Column field="name" header="Name" ref="name" :sortable="true"> </Column>
+    <!-- <base-button link :to="coachDetailsLink"> -->
+    <Column field="name" header="Name" ref="name" :sortable="false"> </Column>
+    <!-- </base-button> -->
     <Column
       field="trips"
       header="Trips"
@@ -27,7 +32,7 @@
       header="Airline"
       filterMatchMode="contains"
       ref="company"
-      :sortable="true"
+      :sortable="false"
     >
     </Column>
     <Column
@@ -35,7 +40,7 @@
       header="Representative"
       filterField="representative.name"
       ref="representative.name"
-      :sortable="true"
+      :sortable="false"
     >
     </Column>
   </DataTable>
@@ -49,6 +54,7 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
   data() {
     return {
       // totalRecords: 20,
+      passenger: null,
       lazyParams: {},
       columns: [
         { field: "name", header: "Name" },
@@ -74,6 +80,9 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
     },
     totalRecords() {
       return this.$store.getters["passengers/totalRecords"];
+    },
+    coachDetailsLink() {
+      return this.$route.path + "/" + "123123213ds"; // /coaches/c1
     },
   },
   customerService: null,
@@ -106,6 +115,14 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
     },
     onPage(event: any) {
       this.loadLazyData(event.page);
+    },
+    onRowSelect(event: any) {
+      console.log(event);
+      this.$router.push(`/passenger/${event.data._id}`);
+      // this.$router.push({
+      //   name: "passenger",
+      //   params: { id: event.data._id },
+      // });
     },
     onSort(event: any) {
       this.lazyParams = event;

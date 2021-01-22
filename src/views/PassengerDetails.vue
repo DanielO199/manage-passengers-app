@@ -1,14 +1,22 @@
 <template>
-  <div>Details</div>
+  <div>{{ id }} {{ name }}</div>
 </template>
 
 <script>
-export default {
-  props: ["id"],
+import { Options, Vue } from "vue-class-component";
+
+@Options({
+  props: {
+    id: String,
+    name: String,
+  },
   data() {
     return {
       selectedCoach: null,
     };
+  },
+  created() {
+    console.log(this.$route, "XD");
   },
   computed: {
     fullName() {
@@ -27,10 +35,6 @@ export default {
       return this.$route.path + "/" + this.id + "/contact";
     },
   },
-  created() {
-    this.selectedCoach = this.$store.getters["coaches/coaches"].find(
-      (coach) => coach.id === this.id
-    );
-  },
-};
+})
+export default class PassengerDetails extends Vue {}
 </script>

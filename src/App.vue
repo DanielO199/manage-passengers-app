@@ -1,8 +1,9 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <router-link to="/passengers">passengers</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/passengers">passengers</router-link> |
+    <router-link to="/airlines">airlines</router-link>
   </div>
   <router-view />
 </template>

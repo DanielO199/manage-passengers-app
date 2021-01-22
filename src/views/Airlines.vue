@@ -1,6 +1,4 @@
-<template>
-  <PassengersTable />
-</template>
+<template>XD</template>
 
 <script>
 import { Options, Vue } from "vue-class-component";
@@ -45,7 +43,7 @@ import PassengersTable from "@/components/Passengers/PassengersTable";
     },
   },
 })
-export default class Passengers extends Vue {
+export default class Airlines extends Vue {
   get passengers() {
     console.log(this.$store.getters["passengers/passengers"]);
     return this.$store.getters["passengers/passengers"];
