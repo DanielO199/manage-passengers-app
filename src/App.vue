@@ -1,32 +1,32 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/passengers">passengers</router-link> |
-    <router-link to="/airlines">airlines</router-link>
-  </div>
+  <!-- <div id="nav"> -->
+  <Header v-if="isLoggedIn" />
+  <!-- </div> -->
   <router-view />
 </template>
 
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+
+import Header from "@/components/Header.vue";
+
+@Options({
+  components: {
+    Header,
+  },
+  computed: {
+    isLoggedIn() {
+      return this.$store.getters["auth/isAuthenticated"];
+    },
+  },
+})
+export default class App extends Vue {
+  // get isLoggedIn() {
+  //   return this.$store.getters.isAuthenticated;
+  // }
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "@/assets/style.scss";
 </style>

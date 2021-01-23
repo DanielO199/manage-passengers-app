@@ -5,6 +5,9 @@ export default {
 	setPassengers(state: any, payload: any) {
 		state.passengers = payload;
 	},
+	setPassenger(state: any, payload: any) {
+		state.passenger = payload;
+	},
 	setTotalRecords(state: any, payload: any) {
 		state.totalRecords = payload;
 	},

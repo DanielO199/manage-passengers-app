@@ -6,9 +6,8 @@ export default {
 	namespaced: true,
 	state() {
 		return {
-			passengers: [],
-			passenger: null,
-			totalRecords: null,
+			token: 'ddsa',
+			userId: null,
 			isLoading: false
 		};
 	},

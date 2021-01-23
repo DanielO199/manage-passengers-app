@@ -7,10 +7,11 @@ import PrimeVue from 'primevue/config';
 import Button from 'primevue/button';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
+import Sidebar from 'primevue/sidebar';
 
 import BaseButton from '@/components/BaseButton.vue';
 
-import 'primevue/resources/themes/saga-blue/theme.css';
+import 'primevue/resources/themes/saga-green/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 
@@ -22,6 +23,7 @@ createApp(App)
 	.component('DataTable', DataTable)
 	.component('Column', Column)
 	.component('base-button', BaseButton)
+	.component('Sidebar', Sidebar)
 	.mount('#app');
 // const app = createApp(App)
 

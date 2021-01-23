@@ -5,6 +5,9 @@ export default {
 	passengers(state: any) {
 		return state.passengers;
 	},
+	passenger(state: any) {
+		return state.passenger;
+	},
 	totalRecords(state: any) {
 		return state.totalRecords;
 	},

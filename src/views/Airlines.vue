@@ -1,12 +1,14 @@
-<template>XD</template>
+<template>
+  <AirlinesTable />
+</template>
 
 <script>
 import { Options, Vue } from "vue-class-component";
 
-import PassengersTable from "@/components/Passengers/PassengersTable";
+import AirlinesTable from "@/components/AirlinesTable";
 
 @Options({
-  components: { PassengersTable },
+  components: { AirlinesTable },
   data() {
     return {
       isLoading: false,
@@ -44,10 +46,10 @@ import PassengersTable from "@/components/Passengers/PassengersTable";
   },
 })
 export default class Airlines extends Vue {
-  get passengers() {
-    console.log(this.$store.getters["passengers/passengers"]);
-    return this.$store.getters["passengers/passengers"];
-  }
+  // get passengers() {
+  //   console.log(this.$store.getters["passengers/passengers"]);
+  //   return this.$store.getters["passengers/passengers"];
+  // }
 }
 </script>
 
