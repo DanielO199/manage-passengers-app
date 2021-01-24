@@ -32,7 +32,12 @@
       </div>
     </div>
 
-    <Button @click="closeDialog" label="Close" />
+    <Button
+      @click="closeDialog"
+      label="Close"
+      class="p-button-outlined p-button-danger p-button-sm"
+      :style="{ width: '200px' }"
+    />
   </Dialog>
 </template>
 

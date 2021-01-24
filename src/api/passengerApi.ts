@@ -9,7 +9,7 @@ export const passengerApi = {
 	get: function(id: any, params?: any) {
 		return api.get(`${endpoint}/${id}`, params);
 	},
-	update: function(id: any, data: any) {
-		return api.put(`${endpoint}/${id}`, data);
+	update: function(data: any) {
+		return api.put(`${endpoint}/${data.id}`, data);
 	}
 };

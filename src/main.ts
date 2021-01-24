@@ -9,6 +9,10 @@ import Column from 'primevue/column';
 import Sidebar from 'primevue/sidebar';
 import InputText from 'primevue/inputtext';
 import Dialog from 'primevue/dialog';
+import ToastService from 'primevue/toastservice';
+import Toast from 'primevue/toast';
+import ProgressSpinner from 'primevue/progressspinner';
+import InputNumber from 'primevue/inputnumber';
 
 import BaseButton from '@/components/BaseButton.vue';
 
@@ -20,6 +24,7 @@ const app = createApp(App);
 
 app.use(store);
 app.use(router);
+app.use(ToastService);
 
 app
 	.component('Button', Button)
@@ -28,6 +33,9 @@ app
 	.component('base-button', BaseButton)
 	.component('Sidebar', Sidebar)
 	.component('InputText', InputText)
+	.component('Toast', Toast)
+	.component('ProgressSpinner', ProgressSpinner)
+	.component('InputNumber', InputNumber)
 	.component('Dialog', Dialog);
 
 app.mount('#app');

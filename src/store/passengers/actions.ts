@@ -16,5 +16,11 @@ export default {
 		const response = await passengerApi.get(id);
 		commit('setPassenger', response);
 		commit('setLoading', false);
+	},
+	async updatePassenger({ commit }: any, data: any) {
+		commit('setLoadingAction', true);
+
+		await passengerApi.update(data);
+		commit('setLoadingAction', false);
 	}
 };

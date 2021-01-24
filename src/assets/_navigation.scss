@@ -27,19 +27,6 @@ header {
 		margin: 0 0.5rem;
 	}
 
-	a {
-		text-decoration: none;
-		color: #f391e3;
-		display: inline-block;
-		padding: 0.75rem 1.5rem;
-		border: 1px solid transparent;
-
-		&:active,
-		&:hover {
-			border: 1px solid #f391e3;
-		}
-	}
-
 	.router-link-active {
 		border: 1px solid #f391e3;
 	}
@@ -58,6 +45,25 @@ header {
 	.hamburger {
 		display: none;
 	}
+}
+
+a {
+	text-decoration: none;
+	color: #f391e3;
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	border: 1px solid transparent;
+
+	&:active,
+	&:hover {
+		border: 1px solid #f391e3;
+	}
+}
+
+.drawer-link__item {
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: rgb(171, 57, 175);
 }
 
 @media (max-width: 500px) {

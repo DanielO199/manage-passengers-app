@@ -9,7 +9,8 @@ export default {
 			passengers: [],
 			passenger: null,
 			totalRecords: null,
-			isLoading: false
+			isLoading: false,
+			isLoadingAction: false
 		};
 	},
 	mutations,

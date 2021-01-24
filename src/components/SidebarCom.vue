@@ -5,10 +5,15 @@
     </button>
 
     <router-link to="/passengers">
-      <div @click="toggleSidebar">Passengers</div></router-link
+      <div class="drawer-link__item" @click="toggleSidebar">
+        Passengers
+      </div></router-link
     >
+
     <router-link to="/airlines">
-      <div @click="toggleSidebar">Airlines</div></router-link
+      <div class="drawer-link__item" @click="toggleSidebar">
+        Airlines
+      </div></router-link
     >
   </Sidebar>
 </template>

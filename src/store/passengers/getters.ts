@@ -2,6 +2,9 @@ export default {
 	isLoading(state: any) {
 		return state.isLoading;
 	},
+	isLoadingAction(state: any) {
+		return state.isLoadingAction;
+	},
 	passengers(state: any) {
 		return state.passengers;
 	},
@@ -10,8 +13,5 @@ export default {
 	},
 	totalRecords(state: any) {
 		return state.totalRecords;
-	},
-	hasPassengers(state: any) {
-		return state.passengers && state.passengers.length > 0;
 	}
 };
