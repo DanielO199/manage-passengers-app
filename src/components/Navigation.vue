@@ -1,6 +1,6 @@
 <template>
   <Navbar @toggle-sidebar="toggleSidebar" />
-  <SidebarCom :isSidebarOpen="isSidebarOpen" @toggle-sidebar="toggleSidebar" />
+  <SidebarCom @toggle-sidebar="toggleSidebar" :isSidebarOpen="isSidebarOpen" />
 </template>
 
 <script lang="ts">

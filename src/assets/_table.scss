@@ -2,7 +2,7 @@
 	display: none;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
 	.p-datatable {
 		&.p-datatable-responsive-demo {
 			.p-datatable-thead > tr > th,
@@ -34,7 +34,7 @@
 	}
 }
 
-.product-image {
+.airline-image {
 	width: 200px;
 	height: 50px;
 }

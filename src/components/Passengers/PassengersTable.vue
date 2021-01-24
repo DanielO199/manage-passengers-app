@@ -5,7 +5,6 @@
     :lazy="true"
     :paginator="true"
     :rows="10"
-    ref="dt"
     :totalRecords="totalRecords"
     :loading="isLoading"
     @page="onPage($event)"
@@ -49,18 +48,17 @@ import { Options, Vue } from "vue-class-component";
     },
   },
   created() {
-    this.loadLazyData();
+    this.loadPassengers();
   },
   methods: {
-    async loadLazyData(page?: number) {
+    async loadPassengers(page?: number) {
       await this.$store.dispatch("passengers/fetchPassengers", {
         page,
         size: 10,
       });
     },
     onPage(event: any) {
-      console.log(event);
-      this.loadLazyData(event.page);
+      this.loadPassengers(event.page);
     },
     onRowSelect(event: any) {
       this.$router.push(`/passenger/${event.data._id}`);

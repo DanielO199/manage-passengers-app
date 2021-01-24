@@ -1,0 +1,16 @@
+.dialog-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.dialog-content__item {
+	width: 100%;
+	display: flex;
+	margin: 0.8rem 0;
+	justify-content: space-between;
+	label {
+		font-weight: 500;
+	}
+}
