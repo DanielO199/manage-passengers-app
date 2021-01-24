@@ -1,53 +1,53 @@
 <template>
   <DataTable
+    class="p-datatable-responsive-demo"
     ref="dt"
     :value="airlines"
     v-model:selection="selectedProducts"
     dataKey="id"
     :paginator="true"
     :rows="10"
+    :loading="isLoading"
     :filters="filters"
   >
     <template #header>
-      <div class="table-header">
-        <h5 class="p-m-0">Manage Products</h5>
+      <div class="search-wrapper">
+        <div class="p-m-0">Manage airlines</div>
         <span class="p-input-icon-left">
           <i class="pi pi-search" />
-          <InputText v-model="filters['global']" placeholder="Search by name" />
+          <InputText v-model="filters['global']" placeholder="Search..." />
         </span>
       </div>
     </template>
-
-    <!-- <Column
-      selectionMode="multiple"
-      headerStyle="width: 3rem"
-      :exportable="false"
-    ></Column> -->
-    <Column field="country" header="Country" :sortable="true"></Column>
-    <Column field="name" header="Name" :sortable="true"></Column>
-    <Column header="Image">
+    <Column header="Logo" field="logo">
       <template #body="slotProps">
+        <span class="p-column-title">Logo</span>
         <img
-          :src="'demo/images/product/' + slotProps.data.image"
+          :src="slotProps.data.logo"
           :alt="slotProps.data.image"
           class="product-image"
         />
       </template>
     </Column>
-    <Column field="website" header="Website" :sortable="true">
-      <!-- <template #body="slotProps">
-        {{ formatCurrency(slotProps.data.price) }}
-      </template> -->
+    <Column field="name" header="Name" :sortable="true">
+      <template #body="slotProps">
+        <span class="p-column-title">Name</span>
+        {{ slotProps.data.name }}
+      </template>
     </Column>
-    <Column field="category" header="Category" :sortable="true"></Column>
+    <Column field="country" header="Country" :sortable="true">
+      <template #body="slotProps">
+        <span class="p-column-title">Country</span>
+        {{ slotProps.data.country }}
+      </template>
+    </Column>
 
-    <Column field="inventoryStatus" header="Status" :sortable="true"> </Column>
-    <Column :exportable="false">
+    <Column header="Details" :exportable="false">
       <template #body="slotProps">
         <Button
-          icon="pi pi-pencil"
+          icon="pi pi-eye"
           class="p-button-rounded p-button-success p-mr-2"
-          @click="editProduct(slotProps.data)"
+          @click="openDetails(slotProps.data)"
         />
       </template>
     </Column>
@@ -55,27 +55,22 @@
 
   <Dialog
     v-model:visible="productDialog"
-    :style="{ width: '450px' }"
-    header="Product Details"
+    :style="{ width: '80%' }"
+    header="Airline Details"
     :modal="true"
     class="p-fluid"
   >
-    <img
-      :src="'demo/images/product/' + product.image"
-      :alt="product.image"
-      class="product-image"
-      v-if="product.image"
-    />
+    <img :src="airline.logo" :alt="airline.image" class="product-image" />
     <div class="p-field">
       <label for="name">Name</label>
       <InputText
         id="name"
-        v-model.trim="product.name"
+        v-model.trim="airline.name"
         required="true"
         autofocus
-        :class="{ 'p-invalid': submitted && !product.name }"
+        :class="{ 'p-invalid': submitted && !airline.name }"
       />
-      <small class="p-error" v-if="submitted && !product.name"
+      <small class="p-error" v-if="submitted && !airline.name"
         >Name is required.</small
       >
     </div>
@@ -117,7 +112,7 @@
         <!-- <InputNumber id="quantity" v-model="product.quantity" integeronly /> -->
       </div>
     </div>
-    <template #footer>
+    <!-- <template #footer>
       <Button
         label="Cancel"
         icon="pi pi-times"
@@ -130,13 +125,12 @@
         class="p-button-text"
         @click="saveProduct"
       />
-    </template>
+    </template> -->
   </Dialog>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 
 @Options({
   data() {
@@ -144,7 +138,7 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
       productDialog: false,
       deleteProductDialog: false,
       deleteProductsDialog: false,
-      product: {},
+      airline: {},
       selectedProducts: null,
       filters: {},
       submitted: false,
@@ -154,9 +148,6 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
   //   // passengers: Array,
   //   totalRecords: Number,
   // },
-  components: {
-    HelloWorld,
-  },
   computed: {
     isLoading() {
       return this.$store.getters["airlines/isLoading"];
@@ -181,8 +172,8 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
     this.loadLazyData();
   },
   methods: {
-    editProduct(product: any) {
-      this.product = { ...product };
+    openDetails(airline: any) {
+      this.airline = { ...airline };
       this.productDialog = true;
     },
     async loadLazyData(page?: any) {

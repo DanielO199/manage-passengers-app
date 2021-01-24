@@ -12,16 +12,24 @@
     @row-select="onRowSelect"
     selectionMode="single"
   >
-    <Column field="name" header="Name" ref="name" :sortable="false" />
-
-    <Column field="trips" header="Trips" ref="country.name" :sortable="false" />
-
-    <Column
-      field="airline.name"
-      header="Airline"
-      ref="company"
-      :sortable="false"
-    />
+    <Column field="name" header="Name">
+      <template #body="slotProps">
+        <span class="p-column-title">Name</span>
+        {{ slotProps.data.name }}
+      </template>
+    </Column>
+    <Column field="trips" header="Trips">
+      <template #body="slotProps">
+        <span class="p-column-title">Trips</span>
+        {{ slotProps.data.trips }}
+      </template>
+    </Column>
+    <Column field="airline.name" header="Airline">
+      <template #body="slotProps">
+        <span class="p-column-title">Airline</span>
+        {{ slotProps.data.airline.name }}
+      </template>
+    </Column>
   </DataTable>
 </template>
 
@@ -40,23 +48,18 @@ import { Options, Vue } from "vue-class-component";
       return this.$store.getters["passengers/totalRecords"];
     },
   },
-
   created() {
     this.loadLazyData();
   },
   methods: {
-    async loadLazyData(page?: any) {
-      try {
-        await this.$store.dispatch("passengers/fetchPassengers", {
-          page,
-          size: 10,
-        });
-      } catch (error) {
-        this.error = error.message || "Something went wrong!";
-      }
-      this.isLoading = false;
+    async loadLazyData(page?: number) {
+      await this.$store.dispatch("passengers/fetchPassengers", {
+        page,
+        size: 10,
+      });
     },
     onPage(event: any) {
+      console.log(event);
       this.loadLazyData(event.page);
     },
     onRowSelect(event: any) {

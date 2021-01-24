@@ -1,17 +1,16 @@
 <template>
+  <Header>Airlines</Header>
   <AirlinesTable />
 </template>
 
-<script>
+<script lang="ts">
 import { Options, Vue } from "vue-class-component";
 
-import AirlinesTable from "@/components/AirlinesTable";
+import { AirlinesTable } from "@/components/Airlines";
+import { Header } from "@/components/common";
 
 @Options({
-  components: { AirlinesTable },
+  components: { AirlinesTable, Header },
 })
 export default class Airlines extends Vue {}
 </script>
-
-<style scoped>
-</style>

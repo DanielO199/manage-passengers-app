@@ -6,7 +6,7 @@ export default {
 	namespaced: true,
 	state() {
 		return {
-			token: 'ddsa',
+			token: '43e',
 			userId: null,
 			isLoading: false
 		};

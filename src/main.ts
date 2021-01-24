@@ -3,7 +3,6 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-import PrimeVue from 'primevue/config';
 import Button from 'primevue/button';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
@@ -17,23 +16,18 @@ import 'primevue/resources/themes/saga-green/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 
-createApp(App)
-	.use(store)
-	.use(router)
-	.use(PrimeVue)
+const app = createApp(App);
+
+app.use(store);
+app.use(router);
+
+app
 	.component('Button', Button)
 	.component('DataTable', DataTable)
 	.component('Column', Column)
 	.component('base-button', BaseButton)
 	.component('Sidebar', Sidebar)
 	.component('InputText', InputText)
-	.component('Dialog', Dialog)
-	.mount('#app');
-// const app = createApp(App)
+	.component('Dialog', Dialog);
 
-// app.use(router);
-// app.use(store);
-
-// app.component('base-card', BaseCard);
-
-// app.mount('#app');
+app.mount('#app');
