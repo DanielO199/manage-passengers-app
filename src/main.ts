@@ -8,6 +8,8 @@ import Button from 'primevue/button';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import Sidebar from 'primevue/sidebar';
+import InputText from 'primevue/inputtext';
+import Dialog from 'primevue/dialog';
 
 import BaseButton from '@/components/BaseButton.vue';
 
@@ -24,6 +26,8 @@ createApp(App)
 	.component('Column', Column)
 	.component('base-button', BaseButton)
 	.component('Sidebar', Sidebar)
+	.component('InputText', InputText)
+	.component('Dialog', Dialog)
 	.mount('#app');
 // const app = createApp(App)
 

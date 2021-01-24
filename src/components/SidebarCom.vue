@@ -7,9 +7,11 @@
     <router-link to="/passengers">
       <div @click="toggleSidebar">Passengers</div></router-link
     >
+    <router-link to="/airlines">
+      <div @click="toggleSidebar">Airlines</div></router-link
+    >
   </Sidebar>
 </template>
-
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
@@ -21,12 +23,6 @@ import { Options, Vue } from "vue-class-component";
   methods: {
     toggleSidebar() {
       this.$emit("toggle-sidebar");
-    },
-  },
-
-  computed: {
-    isSidebarOpen() {
-      return this.isSidebarOpen;
     },
   },
 })

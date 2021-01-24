@@ -5,6 +5,6 @@ export default {
 		commit('setLoading', true);
 		const response = await airlineApi.list(params);
 		commit('setLoading', false);
-		commit('setPassengers', response);
+		commit('setAirlines', response);
 	}
 };

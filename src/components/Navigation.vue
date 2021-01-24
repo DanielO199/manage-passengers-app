@@ -1,20 +1,5 @@
 <template>
-  <header>
-    <nav>
-      <ul>
-        <li>
-          <router-link to="/passengers">Passengers</router-link>
-        </li>
-        <li>
-          <router-link to="/airlines">Airlines</router-link>
-        </li>
-      </ul>
-      <h5><i class="pi pi-power-off"></i> Logout</h5>
-    </nav>
-    <div class="hamburger">
-      <i @click="toggleSidebar" class="pi pi-bars"></i>
-    </div>
-  </header>
+  <Navbar @toggle-sidebar="toggleSidebar" />
   <SidebarCom :isSidebarOpen="isSidebarOpen" @toggle-sidebar="toggleSidebar" />
 </template>
 
@@ -22,9 +7,11 @@
 import { Options, Vue } from "vue-class-component";
 
 import SidebarCom from "@/components/SidebarCom.vue";
+import Navbar from "@/components/Navbar.vue";
 
 @Options({
   components: {
+    Navbar,
     SidebarCom,
   },
   data() {
@@ -38,5 +25,5 @@ import SidebarCom from "@/components/SidebarCom.vue";
     },
   },
 })
-export default class Header extends Vue {}
+export default class Navigation extends Vue {}
 </script>

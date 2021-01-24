@@ -1,18 +1,16 @@
 <template>
-  <!-- <div id="nav"> -->
-  <Header v-if="isLoggedIn" />
-  <!-- </div> -->
+  <Navigation v-if="isLoggedIn" />
   <router-view />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 
-import Header from "@/components/Header.vue";
+import Navigation from "@/components/Navigation.vue";
 
 @Options({
   components: {
-    Header,
+    Navigation,
   },
   computed: {
     isLoggedIn() {
@@ -20,11 +18,7 @@ import Header from "@/components/Header.vue";
     },
   },
 })
-export default class App extends Vue {
-  // get isLoggedIn() {
-  //   return this.$store.getters.isAuthenticated;
-  // }
-}
+export default class App extends Vue {}
 </script>
 
 <style lang="scss">
