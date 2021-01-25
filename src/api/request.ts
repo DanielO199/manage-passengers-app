@@ -1,5 +1,6 @@
 import axios from 'axios';
 import querystring from 'query-string';
+import store from '@/store';
 
 import { config } from '@/globals/config';
 const { apiUrl } = config;
@@ -41,6 +42,8 @@ export const request = (_url: any, _config: any = {}) => {
 	if (!req.headers) {
 		req.headers = {};
 	}
+
+	req.headers['Authorization'] = `Bearer ${store.getters['auth/accessToken']}`;
 
 	if (_config.multipart) {
 		req.headers['content-type'] = 'multipart/form-data';

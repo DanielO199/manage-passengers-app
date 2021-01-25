@@ -14,8 +14,6 @@ import Toast from 'primevue/toast';
 import ProgressSpinner from 'primevue/progressspinner';
 import InputNumber from 'primevue/inputnumber';
 
-import BaseButton from '@/components/BaseButton.vue';
-
 import 'primevue/resources/themes/saga-green/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
@@ -30,7 +28,6 @@ app
 	.component('Button', Button)
 	.component('DataTable', DataTable)
 	.component('Column', Column)
-	.component('base-button', BaseButton)
 	.component('Sidebar', Sidebar)
 	.component('InputText', InputText)
 	.component('Toast', Toast)

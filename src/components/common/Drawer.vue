@@ -31,5 +31,5 @@ import { Options, Vue } from "vue-class-component";
     },
   },
 })
-export default class SidebarCom extends Vue {}
+export default class Drawer extends Vue {}
 </script>

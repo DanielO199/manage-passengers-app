@@ -1,18 +1,18 @@
 <template>
   <Navbar @toggle-sidebar="toggleSidebar" />
-  <SidebarCom @toggle-sidebar="toggleSidebar" :isSidebarOpen="isSidebarOpen" />
+  <Drawer @toggle-sidebar="toggleSidebar" :isSidebarOpen="isSidebarOpen" />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 
-import SidebarCom from "@/components/SidebarCom.vue";
-import Navbar from "@/components/Navbar.vue";
+import Drawer from "./Drawer.vue";
+import Navbar from "./Navbar.vue";
 
 @Options({
   components: {
     Navbar,
-    SidebarCom,
+    Drawer,
   },
   data() {
     return {

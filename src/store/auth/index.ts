@@ -6,7 +6,7 @@ export default {
 	namespaced: true,
 	state() {
 		return {
-			token: '43e',
+			accessToken: '43e',
 			userId: null,
 			isLoading: false
 		};

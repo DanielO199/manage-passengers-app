@@ -6,7 +6,7 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 
-import Navigation from "@/components/Navigation.vue";
+import { Navigation } from "@/components/common";
 
 @Options({
   components: {

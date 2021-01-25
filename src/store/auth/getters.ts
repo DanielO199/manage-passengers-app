@@ -3,6 +3,9 @@ export default {
 		return state.isLoading;
 	},
 	isAuthenticated(state: any) {
-		return !!state.token;
+		return !!state.accessToken;
+	},
+	accessToken(state: any) {
+		return state.accessToken;
 	}
 };

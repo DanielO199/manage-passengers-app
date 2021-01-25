@@ -1,6 +1,6 @@
 export default {
 	setUser(state: any, payload: any) {
-		state.token = payload.token;
-		state.userId = payload.userId;
+		state.accessToken = payload.access_token;
+		// state.userId = payload.userId;
 	}
 };

@@ -6,10 +6,6 @@ export const api = {
 			query
 		};
 
-		// if (cancelToken) {
-		// 	config['cancelToken'] = cancelToken;
-		// }
-
 		return request(url, config);
 	},
 	post: function(url: any, payload: any) {
