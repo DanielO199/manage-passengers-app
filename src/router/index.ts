@@ -18,6 +18,11 @@ const routes: Array<RouteRecordRaw> = [
 		component: () => import('@/views/Airlines.vue')
 	},
 	{
+		path: '/',
+		name: 'Login',
+		component: () => import('@/views/Login.vue')
+	},
+	{
 		path: '/:notFound(.*)',
 		name: 'Not found',
 		component: () => import('@/views/NotFound.vue')

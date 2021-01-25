@@ -86,7 +86,7 @@ import { Header } from "@/components/common";
         this.$toast.add({
           severity: "success",
           summary: "Successful",
-          detail: "Product Updated",
+          detail: "Passenger Updated",
           life: 3000,
         });
       } catch (error) {

@@ -35,6 +35,12 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 
+interface Event {
+  page: number;
+  pageCount: number;
+  data: any;
+}
+
 @Options({
   computed: {
     isLoading() {
@@ -57,10 +63,10 @@ import { Options, Vue } from "vue-class-component";
         size: 10,
       });
     },
-    onPage(event: any) {
+    onPage(event: Event) {
       this.loadPassengers(event.page);
     },
-    onRowSelect(event: any) {
+    onRowSelect(event: Event) {
       this.$router.push(`/passenger/${event.data._id}`);
     },
   },
