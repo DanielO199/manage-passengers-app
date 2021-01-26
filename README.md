@@ -1,24 +1,9 @@
-# manage-app
+# Manage passengers
 
-## Project setup
-```
-npm install
-```
+## <a href="https://manage-passengers.web.app"><strong>Live preview</strong></a>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+<img  src ="https://cdn1.bbcode0.com/uploads/2021/1/26/f3c43654330a19c2e5e2af0b508ea65e-full.png">
 
-### Compiles and minifies for production
-```
-npm run build
-```
+<hr>
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
