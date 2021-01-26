@@ -28,7 +28,7 @@ header {
 	}
 
 	.router-link-active {
-		border: 1px solid #f391e3;
+		border: 1px solid $primary-nav;
 	}
 
 	h5 {
@@ -49,14 +49,14 @@ header {
 
 a {
 	text-decoration: none;
-	color: #f391e3;
+	color: $primary-nav;
 	display: inline-block;
 	padding: 0.75rem 1.5rem;
 	border: 1px solid transparent;
 
 	&:active,
 	&:hover {
-		border: 1px solid #f391e3;
+		border: 1px solid $primary-nav;
 	}
 }
 

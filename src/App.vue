@@ -12,16 +12,12 @@ import { Navigation } from "@/components/common";
   components: {
     Navigation,
   },
+  created() {
+    this.$store.dispatch("auth/tryLogin");
+  },
   computed: {
     isLoggedIn() {
-      console.log(this.$store.getters["auth/isAuthenticated"]);
       return this.$store.getters["auth/isAuthenticated"];
-    },
-  },
-  watch: {
-    isAuth() {
-      if (!this.$store.getters["auth/isAuthenticated"])
-        this.$router.replace("/");
     },
   },
 })

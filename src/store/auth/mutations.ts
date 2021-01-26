@@ -1,8 +1,10 @@
+import { AuthState } from './interfaces';
+
 export default {
-	setLoading(state: any, payload: any) {
+	setLoading(state: AuthState, payload: boolean) {
 		state.isLoading = payload;
 	},
-	setUser(state: any, payload: any) {
+	setUser(state: AuthState, payload: any) {
 		state.accessToken = payload.access_token;
 	}
 };

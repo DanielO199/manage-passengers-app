@@ -2,13 +2,15 @@ import mutations from './mutations';
 import actions from './actions';
 import getters from './getters';
 
+import { PassengersState } from './interfaces';
+
 export default {
 	namespaced: true,
-	state() {
+	state(): PassengersState {
 		return {
 			passengers: [],
-			passenger: null,
-			totalRecords: null,
+			passenger: {},
+			totalRecords: 0,
 			isLoading: false,
 			isLoadingAction: false
 		};

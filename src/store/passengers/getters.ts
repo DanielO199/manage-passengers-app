@@ -1,17 +1,19 @@
+import { PassengersState } from './interfaces';
+
 export default {
-	isLoading(state: any) {
+	isLoading(state: PassengersState) {
 		return state.isLoading;
 	},
-	isLoadingAction(state: any) {
+	isLoadingAction(state: PassengersState) {
 		return state.isLoadingAction;
 	},
-	passengers(state: any) {
+	passengers(state: PassengersState) {
 		return state.passengers;
 	},
-	passenger(state: any) {
+	passenger(state: PassengersState) {
 		return state.passenger;
 	},
-	totalRecords(state: any) {
+	totalRecords(state: PassengersState) {
 		return state.totalRecords;
 	}
 };

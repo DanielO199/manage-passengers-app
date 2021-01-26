@@ -1,17 +1,19 @@
+import { PassengersState } from './interfaces';
+
 export default {
-	setLoading(state: any, payload: any) {
+	setLoading(state: PassengersState, payload: boolean) {
 		state.isLoading = payload;
 	},
-	setLoadingAction(state: any, payload: any) {
+	setLoadingAction(state: PassengersState, payload: boolean) {
 		state.isLoadingAction = payload;
 	},
-	setPassengers(state: any, payload: any) {
+	setPassengers(state: PassengersState, payload: any) {
 		state.passengers = payload;
 	},
-	setPassenger(state: any, payload: any) {
+	setPassenger(state: PassengersState, payload: any) {
 		state.passenger = payload;
 	},
-	setTotalRecords(state: any, payload: any) {
+	setTotalRecords(state: PassengersState, payload: number) {
 		state.totalRecords = payload;
 	}
 };

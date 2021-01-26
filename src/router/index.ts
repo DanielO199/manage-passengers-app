@@ -41,7 +41,7 @@ const router = createRouter({
 
 router.beforeEach(function(to, _, next) {
 	if (to.meta.requiresAuth && !store.getters['auth/isAuthenticated']) {
-		next({ name: 'Login' });
+		next('/');
 	} else if (to.meta.requiresUnauth && store.getters['auth/isAuthenticated']) {
 		next('/airlines');
 	} else {

@@ -1,11 +1,10 @@
+import { AirlinesState } from './intefaces';
+
 export default {
-	setLoading(state: any, payload: any) {
+	setLoading(state: AirlinesState, payload: boolean) {
 		state.isLoading = payload;
 	},
-	setAirlines(state: any, payload: any) {
+	setAirlines(state: AirlinesState, payload: any) {
 		state.airlines = payload;
-	},
-	setFetchTimestamp(state: any) {
-		state.lastFetch = new Date().getTime();
 	}
 };

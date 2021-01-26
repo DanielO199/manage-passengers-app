@@ -3,10 +3,10 @@
     <nav>
       <ul>
         <li>
-          <router-link to="/passengers">Passengers</router-link>
+          <router-link to="/airlines">Airlines</router-link>
         </li>
         <li>
-          <router-link to="/airlines">Airlines</router-link>
+          <router-link to="/passengers">Passengers</router-link>
         </li>
       </ul>
       <h5 @click="logout"><i class="pi pi-power-off"></i> Logout</h5>

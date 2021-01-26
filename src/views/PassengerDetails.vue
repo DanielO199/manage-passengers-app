@@ -2,46 +2,7 @@
   <Header>Passenger details</Header>
   <div class="passenger-content" v-if="!isLoading">
     <div class="passenger-content__item">
-      <form class="passenger-form">
-        <label for="name">Name</label>
-        <InputText
-          id="name"
-          v-model="passenger.name"
-          required="true"
-          autofocus
-          :class="{ 'p-invalid': !passenger.name }"
-        />
-        <label for="name">Trips</label>
-        <InputNumber
-          id="trips"
-          v-model="passenger.trips"
-          required="true"
-          autofocus
-          :class="{ 'p-invalid': !passenger.trips }"
-        />
-        <Button
-          v-if="!isLoadingAction"
-          @click="updatePassenger"
-          label="Save"
-          icon="pi pi-check"
-          :style="{
-            width: '100px',
-            height: '35px',
-            marginTop: '1rem',
-          }"
-          iconPos="right"
-          :disabled="!passenger.name || !passenger.trips"
-        />
-        <i
-          v-if="isLoadingAction"
-          class="pi pi-spin pi-spinner"
-          :style="{
-            fontSize: '1.5rem',
-            marginTop: '1.5rem',
-            marginLeft: '2.5rem',
-          }"
-        ></i>
-      </form>
+      <UpdateForm :passenger="passenger" @update-passenger="updatePassenger" />
     </div>
 
     <div class="passenger-content__item">
@@ -63,13 +24,15 @@
 
 <script>
 import { Options, Vue } from "vue-class-component";
+
+import { UpdateForm } from "@/components/Passengers";
 import { Header } from "@/components/common";
 
 @Options({
   props: {
     id: String,
   },
-  components: { Header },
+  components: { Header, UpdateForm },
   async created() {
     await this.$store.dispatch("passengers/fetchPassenger", this.id);
   },
@@ -97,9 +60,6 @@ import { Header } from "@/components/common";
   computed: {
     isLoading() {
       return this.$store.getters["passengers/isLoading"];
-    },
-    isLoadingAction() {
-      return this.$store.getters["passengers/isLoadingAction"];
     },
     passenger() {
       return this.$store.getters["passengers/passenger"];

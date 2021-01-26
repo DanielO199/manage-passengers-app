@@ -1,11 +1,13 @@
+import { AuthState } from './interfaces';
+
 export default {
-	isLoading(state: any) {
+	isLoading(state: AuthState) {
 		return state.isLoading;
 	},
-	isAuthenticated(state: any) {
+	isAuthenticated(state: AuthState) {
 		return !!state.accessToken;
 	},
-	accessToken(state: any) {
+	accessToken(state: AuthState) {
 		return state.accessToken;
 	}
 };

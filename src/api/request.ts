@@ -23,13 +23,13 @@ instance.defaults.headers.post['Content-Type'] = 'application/json';
 instance.defaults.headers.delete['Access-Control-Allow-Origin'] = '*';
 
 const logger = (data: any, url: any) => {
-	// if (process.env.NODE_ENV === 'development')
-	// 	console.log(
-	// 		url,
-	// 		`\n\t status: ${data.status}`,
-	// 		`\n\t payload: `,
-	// 		data.data
-	// 	);
+	if (process.env.NODE_ENV === 'development')
+		console.log(
+			url,
+			`\n\t status: ${data.status}`,
+			`\n\t payload: `,
+			data.data
+		);
 	return data.data;
 };
 
