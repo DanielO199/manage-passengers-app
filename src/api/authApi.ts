@@ -1,6 +1,7 @@
 export const authApi = {
 	login: async function(data: any) {
-		const endpoint = 'http://localhost:5000/api/users/login';
+		const endpoint =
+			'https://manage-passengers-api.herokuapp.com/api/users/login';
 
 		const response = await fetch(endpoint, {
 			method: 'POST',
