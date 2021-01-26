@@ -6,8 +6,5 @@ export default {
 	},
 	airlines(state: AirlinesState) {
 		return state.airlines;
-	},
-	hasAirlines(state: AirlinesState) {
-		return state.airlines && state.airlines.length > 0;
 	}
 };

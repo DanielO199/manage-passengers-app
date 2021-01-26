@@ -63,7 +63,7 @@ a {
 .drawer-link__item {
 	font-size: 1.5rem;
 	text-decoration: none;
-	color: rgb(171, 57, 175);
+	color: $primary-nav;
 }
 
 @media (max-width: 500px) {
