@@ -14,7 +14,14 @@ import { Navigation } from "@/components/common";
   },
   computed: {
     isLoggedIn() {
+      console.log(this.$store.getters["auth/isAuthenticated"]);
       return this.$store.getters["auth/isAuthenticated"];
+    },
+  },
+  watch: {
+    isAuth() {
+      if (!this.$store.getters["auth/isAuthenticated"])
+        this.$router.replace("/");
     },
   },
 })

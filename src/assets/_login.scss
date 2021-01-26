@@ -1,0 +1,19 @@
+.login-form {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	margin-top: 5rem;
+	width: 100%;
+	max-width: 400px;
+	padding: 1rem;
+	-webkit-box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.75);
+	input {
+		margin-bottom: 1.5rem;
+	}
+	label {
+		text-align: left;
+		margin-bottom: 0.5rem;
+	}
+}

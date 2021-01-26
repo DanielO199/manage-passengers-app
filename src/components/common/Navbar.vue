@@ -9,7 +9,7 @@
           <router-link to="/airlines">Airlines</router-link>
         </li>
       </ul>
-      <h5><i class="pi pi-power-off"></i> Logout</h5>
+      <h5 @click="logout"><i class="pi pi-power-off"></i> Logout</h5>
     </nav>
     <div class="hamburger">
       <i @click="toggleSidebar" class="pi pi-bars"></i>
@@ -24,6 +24,9 @@ import { Options, Vue } from "vue-class-component";
   methods: {
     toggleSidebar() {
       this.$emit("toggle-sidebar");
+    },
+    logout() {
+      this.$store.dispatch("auth/logout");
     },
   },
 })

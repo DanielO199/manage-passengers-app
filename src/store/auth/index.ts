@@ -6,7 +6,7 @@ export default {
 	namespaced: true,
 	state() {
 		return {
-			accessToken: '43e',
+			accessToken: localStorage.getItem('access_token'),
 			userId: null,
 			isLoading: false
 		};
