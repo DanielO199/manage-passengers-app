@@ -63,6 +63,7 @@ import { Options, Vue } from "vue-class-component";
 import AirlineDialog from "./AirlineDialog.vue";
 
 import { FETCH_AIRLINES } from "@/store/airlines/types";
+import { mapActions, mapGetters } from "vuex";
 
 @Options({
   components: { AirlineDialog },
@@ -74,15 +75,10 @@ import { FETCH_AIRLINES } from "@/store/airlines/types";
     };
   },
   computed: {
-    isLoading() {
-      return this.$store.getters["airlines/isLoading"];
-    },
-    airlines() {
-      return this.$store.getters["airlines/airlines"];
-    },
+    ...mapGetters("airlines", ["isLoading", "airlines"]),
   },
   async created() {
-    await this.$store.dispatch(`airlines/${FETCH_AIRLINES}`);
+    await this.getAirlines();
   },
   methods: {
     closeDialog() {
@@ -92,6 +88,7 @@ import { FETCH_AIRLINES } from "@/store/airlines/types";
       this.airline = { ...airline };
       this.isDialogOpen = true;
     },
+    ...mapActions("airlines", { getAirlines: FETCH_AIRLINES }),
   },
 })
 export default class AirlinesTable extends Vue {}
