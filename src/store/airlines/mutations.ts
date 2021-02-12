@@ -1,10 +1,12 @@
 import { AirlinesState } from './intefaces';
 
+import { FETCH_AIRLINES, SET_LOADING, SET_AIRLINES } from './types';
+
 export default {
-	setLoading(state: AirlinesState, payload: boolean) {
+	[SET_LOADING](state: AirlinesState, payload: boolean) {
 		state.isLoading = payload;
 	},
-	setAirlines(state: AirlinesState, payload: any) {
+	[SET_AIRLINES](state: AirlinesState, payload: any) {
 		state.airlines = payload;
 	}
 };

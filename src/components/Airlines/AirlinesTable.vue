@@ -62,6 +62,8 @@
 import { Options, Vue } from "vue-class-component";
 import AirlineDialog from "./AirlineDialog.vue";
 
+import { FETCH_AIRLINES } from "@/store/airlines/types";
+
 @Options({
   components: { AirlineDialog },
   data() {
@@ -80,7 +82,7 @@ import AirlineDialog from "./AirlineDialog.vue";
     },
   },
   async created() {
-    await this.$store.dispatch("airlines/fetchAirlines");
+    await this.$store.dispatch(`airlines/${FETCH_AIRLINES}`);
   },
   methods: {
     closeDialog() {
