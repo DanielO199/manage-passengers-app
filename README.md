@@ -1,24 +1,17 @@
-# manage-app
+# Manage passengers - Daniel Ochab
 
-## Project setup
-```
-npm install
-```
+## <a href="https://manage-passengers.web.app"><strong>Live preview</strong></a>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Credentials 
+login: <br/> api-user1@iwt.net
+     <br/>  api-user2@iwt.net
+     <br/>   api-user3@iwt.net
+     <br/>   api-user4@iwt.net
 
-### Compiles and minifies for production
-```
-npm run build
-```
+password: b3z0nV0cLO
 
-### Lints and fixes files
-```
-npm run lint
-```
+<img  src ="https://cdn1.bbcode0.com/uploads/2021/1/26/f3c43654330a19c2e5e2af0b508ea65e-full.png">
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<hr>
+
+
